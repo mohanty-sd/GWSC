@@ -23,14 +23,16 @@ vec2Src = [sinTheta.*cos(polAnglePhi(:)),...
            sinTheta.*sin(polAnglePhi(:)),...
            cos(polAngleTheta(:))];
        
-%Get the wave frame vector components
+%Get the wave frame vector components (for multiple sky locations if needed)
 xVec = vcrossprod(repmat([0,0,1],nLocs,1),vec2Src);
 yVec = vcrossprod(xVec,vec2Src);
+%Normalize wave frame vectors
 for lpl = 1:nLocs
     xVec(lpl,:) = xVec(lpl,:)/norm(xVec(lpl,:));
     yVec(lpl,:) = yVec(lpl,:)/norm(yVec(lpl,:));
 end
 
+%Detector tensor of a perpendicular arm interferometer 
 detTensor = [1,0,0]'*[1,0,0]-[0,1,0]'*[0,1,0];
 fPlus = zeros(1,nLocs);
 fCross = zeros(1,nLocs);
