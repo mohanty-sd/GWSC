@@ -1,5 +1,0 @@
-%% Test harness for FORMULAFP and SKYPLOT
-%Azimuthal angle
-phiVec = 0:0.1:(2*pi);
-%Polar an
-thetaVec = 0:0.1:pi;
