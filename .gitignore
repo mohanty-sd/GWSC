@@ -1,3 +1,4 @@
 *.m~
 *.gif
 .DS_Store
+NOISE/sigparams.json
