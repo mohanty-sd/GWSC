@@ -11,7 +11,7 @@ function [fPlus,fCross]=detframefpfc(polAngleTheta,polAnglePhi)
 
 %Soumya D. Mohanty, Feb 2019
 
-%Number of locations requested
+%Number of sky locations requested
 nLocs = length(polAngleTheta);
 if length(polAnglePhi) ~= nLocs
     error('Number of theta and phi values must be the same');
@@ -23,7 +23,7 @@ vec2Src = [sinTheta.*cos(polAnglePhi(:)),...
            sinTheta.*sin(polAnglePhi(:)),...
            cos(polAngleTheta(:))];
        
-%Get the wave frame vector components (for multiple sky locations if needed)
+%Get the wave frame X and Y vector components (for multiple sky locations if needed)
 xVec = vcrossprod(repmat([0,0,1],nLocs,1),vec2Src);
 yVec = vcrossprod(xVec,vec2Src);
 %Normalize wave frame vectors
