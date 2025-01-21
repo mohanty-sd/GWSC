@@ -7,7 +7,7 @@ thetaVec = 0:0.1:pi;
 %Function handle: F+ from formula
 fp = @(x,y) formulafp(x,y);
 
-skyplot(phiVec,thetaVec,fp);
+skyplotFunc(phiVec,thetaVec,fp);
 axis equal;
 
 %Add detector arms
